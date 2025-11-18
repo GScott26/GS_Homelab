@@ -28,7 +28,7 @@
 - **CPU:** intel Core i7-10700F (8C/16T)
 - **RAM:** 16GB DDR4 @ 3200Mhz (Dual-Channel, 1DPC)
 - **MoBo:** Z490 Chipset
-- **Storage:** 500GB Sata III HDD
+- **Storage:** 500GB Sata III HDD @ 5400rpm
 - **Net Speed:** 500 mbps
 - **Power Draw:** <80W Average
 
@@ -45,11 +45,11 @@
 
 ### **COMPLETED PROJECTS**
 
-####*n/a | TBA*
+#### *n/a | To-be-added*
 
 ### **IN PROGRESS**
 
-#### HL Server Build | ProxMoxVE Installation and Setup
+#### Foundational Project - HL Server Build | ProxMoxVE Installation and Setup
 - [Build Log](hardware/build-log.md) - [PVE Installation](proxmox/installation.md)
 - *IN PROGRESS - Nov. 2025*
 
