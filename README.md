@@ -70,6 +70,7 @@
 
 ## REPOSITORY STRUCTURE:
 
+```
 GS_Homelab/
 ├── README.md                    ← You are here
 ├── hardware/
@@ -82,6 +83,7 @@ GS_Homelab/
 │   └── [Future project docs]
 └── troubleshooting/
     └── [Issues & solutions]
+```
 
 ---
 
