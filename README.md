@@ -1,5 +1,5 @@
 # GScott_Homelab_v1
-> Documentation of my ProxMox-based homelab setup
+> Documentation of my Proxmox-based homelab setup
 >
 > **Status:** In Progress (Month 1 of 9)  
 > **Last Updated:** November 2025 (initial commit)
@@ -33,11 +33,11 @@
 - **Power Draw:** <80W Average
 
 **Software Stack:**
-- **Hypervisor:** ProxMox VE v9.0-1
-- **Management:** ProxMox Web Interface *(IP: 192.168.4.10:8006)*
+- **Hypervisor:** Proxmox VE v9.0-1
+- **Management:** Proxmox Web Interface *(IP: 192.168.4.10:8006)*
 - **Operating Systems Used:** Ubuntu Server v24.04.3
 
-[Detailed Hardware Specifications](hardware/server-specs.md) - [ProxMoxVE Internal Network Configuration](proxmox/net-config.md)
+[Detailed Hardware Specifications](hardware/server-specs.md) - [ProxmoxVE Internal Network Configuration](proxmox/net-config.md)
 
 ---
 
@@ -49,7 +49,7 @@
 
 ### **IN PROGRESS**
 
-#### Foundational Project - HL Server Build | ProxMoxVE Installation and Setup
+#### Foundational Project - HL Server Build | ProxmoxVE Installation and Setup
 - [Build Log](hardware/build-log.md) - [PVE Installation](proxmox/installation.md)
 - *IN PROGRESS - Nov. 2025*
 
@@ -76,7 +76,7 @@ GS_Homelab/
 ├── hardware/
 │   ├── server-specs.md         Hardware documentation
 │   └── build-log.md            Build process notes
-├── proxmox/
+├── Proxmox/
 │   ├── installation.md         PVE setup guide
 │   └── net-config.md           Network configuration
 ├── projects/
