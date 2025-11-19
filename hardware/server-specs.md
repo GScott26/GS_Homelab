@@ -9,7 +9,7 @@
 
 ## Hardware Overview
 
-This document provides detailed specifications for the primary ProxMox server running my Homelab's infrastructure.
+This document provides detailed specifications for the primary Proxmox server running my Homelab's infrastructure.
 
 ### Physical Server Details
 
@@ -75,7 +75,7 @@ This document provides detailed specifications for the primary ProxMox server ru
   - **RPM:** 5400
   - **Interface:** SATA III (6Gb/s)
   - **Manufacture/Model:** Western Digital - Model No. WD5000LPCX-xxxxxxx
-  - **Usage:** ProxMox VE OS + VM Storage
+  - **Usage:** Proxmox VE OS + VM Storage
   - **File System:** ext4
 
 ***Storage Notes:***
@@ -147,7 +147,7 @@ This document provides detailed specifications for the primary ProxMox server ru
 
 ### Hypervisor:
 
-- **Platform:** ProxMox Virtual Environment (PVE)
+- **Platform:** Proxmox Virtual Environment (PVE)
 - **Version:** 9.0-1
 - **Kernal Version:** 6.x (major version only for security purposes)
 - **Install Date:** November 2025
@@ -163,7 +163,7 @@ This document provides detailed specifications for the primary ProxMox server ru
 
 - VT-x (Intel hardware virtualization technology): Enabled
 - VT-d (Intel Directed I/O / IOMMU technology): Enabled
-- Secure Boot: Disabled (For ProxMox compatibility)
+- Secure Boot: Disabled (For Proxmox compatibility)
 - Boot Mode: UEFI/Legacy
 
 ---
