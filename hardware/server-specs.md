@@ -1,9 +1,9 @@
 # Server Specifications
 
-**Last Updated:** November 19, 2025
-**Status:** In Production
-**Hostname:** gs_HomeLab_v1
-**Primary IP:** 192.168.4.10
+**Last Updated:** November 22, 2025
+**Status:** Finished - Active
+**Hostname:** pve (default)
+**Primary IP:** 192.168.4.101/22
 
 ---
 
@@ -39,11 +39,11 @@ This document provides detailed specifications for the primary Proxmox server ru
 
 - **Capacity:** 16GB
 - **Type:** DDR4
-- **Speed:** JEDEC 2666MHz, XMP to 3200MHz
+- **Speed:** JEDEC 2666MHz, XMP to 2933MHz
 - **Configuration:** Dual-Channel (2 x 8GB)
 - **DPC/DIMMs Per Channel:** 1DPC
 - **ECC Support:** No
-- **Manufacture/Model:** Corsair Vengeance LPX - Model No. CMK16GX4M2B3200C16
+- **Manufacture/Model:** Corsair Vengeance LPX - Model No. CMK16GX4M2B3000C15
 - **Upgrade Path:** Up to 128GB (4 Slots on Motherboard)
 
 ### Motherboard
@@ -69,19 +69,32 @@ This document provides detailed specifications for the primary Proxmox server ru
 
 ### Primary Storage
 
-- **Drive 1 (Boot/Primary):**
-  - **Type:** 2.5" SATA III HDD
-  - **Capacity:** 500GB
-  - **RPM:** 5400
-  - **Interface:** SATA III (6Gb/s)
-  - **Manufacture/Model:** Western Digital - Model No. WD5000LPCX-xxxxxxx
-  - **Usage:** Proxmox VE OS + VM Storage
-  - **File System:** ext4
+- **Drive 1 (boot/VM Storage | local-lvm/local):**
+   - **Type:** 2.5" SATA III SSD
+   - **Capacity:** 240GB
+   - **Interface:** SATA III (6Gb/s)
+   - **Manufacturer/Model:** Intel
+   - **Usage:** Containers and Disk Images (LVM-thin) - Templates and ISO's (LVM)
+   - **File System:** ext4
+- **Drive 2 (backup-primary):**
+   - **Type:** 3.5: SATA III HDD
+   - **Capacity:** 1TB/1000GB
+   - **RPM:** 7200 RPM
+   - **Interface:** SATA III (6Gb/s)
+   - **Manufacturer/Model:** Western Digital
+   - **Usage:** Primary storage for VM backups
+   - **File System:** ext4
+- **Drive 3 (backup-secondary):**
+   - **Type:** 2.5" SATA III HDD
+   - **Capacity:** 500GB
+   - **RPM:** 5400
+   - **Interface:** SATA III (6Gb/s)
+   - **Manufacture/Model:** Western Digital
+   - **Usage:** Secondary drive for backup storage
+   - **File System:** ext4
 
 ***Storage Notes:***
-- Consider upgradeing to SSD--NVMe preferred, SATA III at least--to improve VM performance
-- Current setup should be suitable for my first few planned projects.
-- Backup Strategy: Create and export backups to main PC's high capacity reserve drive (2TB 7200RPM Seagate Barracuda Compute HDD, mostly unused currently besides some game saves from games I havent played in a while). Should prove sufficient while I learn more about data redundancy and automation of these tasks. See [backup-strategies.md](/proxmox/backup-strategies.md) for more info.
+- See [backup-strategies.md](/proxmox/backup-strategies.md) for info on backup schedule and drive setup
 
 ---
 
@@ -106,10 +119,10 @@ This document provides detailed specifications for the primary Proxmox server ru
 
 ### Managment Interface:
 
-- **IP Address:** 192.168.4.10/24
+- **IP Address:** 192.168.4.101/22
 - **Subnet Mask:** 255.255.255.0
-- **Gateway:** 192.168.4.71
-- **DNS Servers:** Primary - 97.64.168.10 | Secondary - 97.64.168.11
+- **Gateway:** 192.168.4.1
+- **DNS Servers:** Primary - 192.168.4.1
 
 ### VLAN Configuration:
 
@@ -148,10 +161,10 @@ This document provides detailed specifications for the primary Proxmox server ru
 ### Hypervisor:
 
 - **Platform:** Proxmox Virtual Environment (PVE)
-- **Version:** 9.0-1
+- **Version:** 9.1-1
 - **Kernal Version:** 6.x (major version only for security purposes)
-- **Install Date:** November 2025
-- **Web Interface:** https://192.168.4.10:8006
+- **Install Date:** November 22, 2025
+- **Web Interface:** https://192.168.4.101:8006
 
 ### BIOS/UEFI:
 
@@ -164,7 +177,8 @@ This document provides detailed specifications for the primary Proxmox server ru
 - VT-x (Intel hardware virtualization technology): Enabled
 - VT-d (Intel Directed I/O / IOMMU technology): Enabled
 - Secure Boot: Disabled (For Proxmox compatibility)
-- Boot Mode: UEFI/Legacy
+- Boot Mode: UEFI
+- VGA Detection: Disabled (headless boot)
 
 ---
 
@@ -182,13 +196,13 @@ This document provides detailed specifications for the primary Proxmox server ru
 
 - **vCPUs:** 0 of 16 threads
 - **RAM:** 0GB of 16GB
-- **Storage:** 0GB of 500GB
+- **Storage:** 0GB of 240GB
 
 ### Available Resources:
 
 - **vCPUs Available:** 16 threads
 - **RAM Available:** 16GB
-- **Disk Space Available:** 500GB
+- **Disk Space Available:** 240GB
 
 ---
 
@@ -196,42 +210,22 @@ This document provides detailed specifications for the primary Proxmox server ru
 
 ### Current Constraints:
 
-1. **Storage Issues**
-    - **Speed:** 5400 RPM HDD limits VM performance, boot times, app loading, etc
-       - **Mitigation:** Planned SSD upgrade once budget improves
-    - **Health:** Used disk from old business laptop, unknown amount of power-on-hours
-       - **Mitigation:** Backup strategy and regular SMART testing to ensure drive health is properly monitored
-
-2. **RAM Capacity:** 16GB limits the number of concurrent VMs
+1. **RAM Capacity:** 16GB limits the number of concurrent VMs
     - **Impact:** Lighter VMs required, may need lighter Linux distros to save on resources
     - **Mitigation:** Use lighter distros, monitor resource usage, allocate smartly
 
-4. **Single NIC:** No network redundancy
+2. **Single NIC:** No network redundancy
     - **Impact:** Single point of failure for network connectivity
     - **Mitigation:** Acceptable risk for homelab usecase -> failure is unlikely, and the majority of planned services are non-vital and therefore potential downtime is more acceptable if replacement NIC has to be purchased.
 
-5. **Non ECC RAM:** No error correction for system memory
+3. **Non ECC RAM:** No error correction for system memory
     - **Impact:** Increased (though still minimal) risk of memory errors
     - **Mitigation:** Regular backups of VMs saved to multiple locations (server drive, personal drive, potentially cloud sync), acceptable risk for homelab usecase with those precautions.
   
 ### Future Upgrade Paths:
 
-1. Boot SSD *(Highest Priority)*
-    - NVMe or SATA SSD for VM performance gains
-    - Ideally 250-500GB
-    - Move current drive to store backups only
-        - less critical task
-        - local backup storage only for redundancy
-    - Budget Estimate: ~$50-$100
-
-2. RAM Expansion *(Medium Priority)*
+1. RAM Expansion *(Medium Priority)*
     - 16GB -> 32GB+
     - Potentially faster, likely around 3600MHz max for stability purposes
     - Will allow for VMs with more intensive workloads
     - Budget Estimate: $120-$180
-
-3. Longer-term Considerations *(Low Priority)*
-    - Dedicated Mass Storage (High-Capacity HDD for monitoring software logs, full system backups, etc.)
-    - Case/Ventilation upgrade -> more fans and/or a more open case for better airflow
-    - Aftermarket CPU cooler for lower thermals -> higher clock speeds for vCPUs
-    - UPS for protection against power interruptions
