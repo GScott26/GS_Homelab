@@ -26,15 +26,15 @@
 
 **Hardware:**
 - **CPU:** intel Core i7-10700F (8C/16T)
-- **RAM:** 16GB DDR4 @ 3200Mhz (Dual-Channel, 1DPC)
+- **RAM:** 16GB DDR4 @ 2933Mhz (Dual-Channel, 1DPC)
 - **MoBo:** Z490 Chipset
-- **Storage:** 500GB Sata III HDD @ 5400rpm
+- **Storage:** 240GB SATA III SSD, 1TB SATA III HDD @ 7200rpm, 500GB Sata III HDD @ 5400rpm
 - **Net Speed:** 500 mbps
 - **Power Draw:** <80W Average
 
 **Software Stack:**
-- **Hypervisor:** Proxmox VE v9.0-1
-- **Management:** Proxmox Web Interface *(IP: 192.168.4.10:8006)*
+- **Hypervisor:** Proxmox VE v9.1-1
+- **Management:** Proxmox Web Interface *(IP: 192.168.4.101:8006)*
 - **Operating Systems Used:** Ubuntu Server v24.04.3
 
 [Detailed Hardware Specifications](hardware/server-specs.md) - [ProxmoxVE Internal Network Configuration](proxmox/net-config.md)
@@ -45,17 +45,17 @@
 
 ### **COMPLETED PROJECTS**
 
-#### *n/a | To-be-added*
+#### Foundational Project - HL Server Build | ProxmoxVE Installation and Setup
+- [Build Log](hardware/build-log.md) - [PVE Installation](proxmox/installation.md)
+- **Finished - Nov. 21, 2025**
 
 ### **IN PROGRESS**
 
-#### Foundational Project - HL Server Build | ProxmoxVE Installation and Setup
-- [Build Log](hardware/build-log.md) - [PVE Installation](proxmox/installation.md)
-- *IN PROGRESS - Nov. 2025*
+#### Project No. 1: Basic VM Setup and Routing Experimentation
+- **Timeline:** Started - Nov. 22, 2025 | Finished - N/A
 
 ### **PLANNED PROJECTS**
 
-- **Project no. 1:** Multi-VM Setup and Initial Routing Experiments - *Planned: Nov. 2025*
 - **Project no. 2:** Network DNS Server and Ad-blocking with Pi-Hole - *Planned: Dec. 2025*
 - **Project no. 3:** VLAN Setup (Virtual) - *Planned: Jan. 2026*
 - **Project no. 4:** Reverse Proxy (Nginx Proxy Manager) - *Planned: Jan. 2026*
