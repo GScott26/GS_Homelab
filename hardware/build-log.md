@@ -36,22 +36,23 @@
 
 - **Storage (1):** Intel 240GB SSD
   - Source: Included from previous build in donated case
-  - Concerns: Small size
+  - Concerns: Small size, age
 
 - **Storage (2):** Western Digital 1TB 3.5" SATA III HDD
   - Source: Included from previous build in donated case
-  - Concerns: None
+  - Concerns: Age
 
 - **Storage (3):** Western Digital 500GB 2.5" SATA III HDD
   - Source: Old laptop (~2018)
   - Concerns: Age, speed
   
 - **PSU:** Corsair HX750 (750W, 80+ Gold, Semi-Modular)
-  - Source: Friend donation
+  - Source: Included from previous build in donated case
+  - Concerns: Age -> Visible components look OK, max draw also much lower than rated wattage -> *should* be fine for now, theoretically -> replace when possible or if any signs of failure emerge
   - Verified: Powers on, all necessary cables present
   
 - **Case:** Corsair Vengeance C70 (ATX Mid Tower)
-  - Source: Friend donation
+  - Source: Friend donation, Included spare parts from old gaming build (originally built c.2013) 
   - Verified: most expansion slot covers present, included fans still work, drive bays intact, everything cleaned and prepped for motherboard transplant
   
 - **GPU:** NVIDIA GeForce GTX 650 Ti (TEMPORARY)
@@ -72,8 +73,14 @@ Originally planned to run at JEDEC speeds (2666MHz) for stability. However, this
 - **Used for:** BIOS config, Proxmox installation, network verification
 - **Removal timeline:** After confirming web interface access (192.168.4.10:8006)
 - **BIOS setting verified:** Will enable proper UEFI settings once server POSTs
-- **Power savings:** ~55W reduction compared to leaving GPU installed
+- **Power savings:** ~55W/hr estimated reduction compared to leaving GPU installed
 - **Kept accessible:** Will store GPU nearby for troubleshooting if needed
+
+**[General] Part Age**
+- Most parts ~12+ years old
+  - includes key parts -> storage + PSU
+- Replace PSU when possible, monitor drive health closely
+- CPU cooler age -> likely *negligible impact* on performance
 
 ---
 
