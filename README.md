@@ -57,7 +57,7 @@
 
 ### **PLANNED PROJECTS**
 
-- **Project no. 2:** Network DNS Server and Ad-blocking with Pi-Hole - *Planned: Dec. 2025*
+- **Project no. 2:** Network DNS Server and Ad-blocking with Pi-Hole (+ Game Server Hosting) - *Planned: Dec. 2025*
 - **Project no. 3:** VLAN Setup (Virtual) - *Planned: Jan. 2026*
 - **Project no. 4:** Reverse Proxy (Nginx Proxy Manager) - *Planned: Jan. 2026*
 - **Project no. 5:** VPN Server (WireGuard) - *Planned: Feb. 2026*
