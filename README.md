@@ -49,10 +49,11 @@
 - [Build Log](hardware/build-log.md) - [PVE Installation](proxmox/installation.md)
 - **Finished - Nov. 21, 2025**
 
+#### Project No. 1: Basic VM Setup and Routing Experimentation
+- **Timeline:** Started - 6PM, Nov. 22, 2025 | Finished - 11PM, Nov. 22, 2025 (Total Time Spent; ~5 Hrs)
+
 ### **IN PROGRESS**
 
-#### Project No. 1: Basic VM Setup and Routing Experimentation
-- **Timeline:** Started - Nov. 22, 2025 | Finished - N/A
 
 ### **PLANNED PROJECTS**
 
