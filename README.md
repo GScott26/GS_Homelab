@@ -74,13 +74,14 @@
 GS_Homelab/
 ├── README.md                    ← You are here
 ├── hardware/
-│   ├── server-specs.md         Hardware documentation
-│   └── build-log.md            Build process notes
+│   ├── server-specs.md               Hardware documentation and active resource allocation
+│   └── build-log.md                  Build process notes
 ├── Proxmox/
-│   ├── installation.md         PVE setup guide
-│   └── net-config.md           Network configuration
+│   ├── installation.md               PVE setup guide (+ my experience)
+|   ├── backup-strategies.md          Details on backup configuration and my thought process/strategy for doing so
+│   └── net-config.md                 Internal Proxmox network configuration -> Port-forwarding setup
 ├── projects/
-│   └── [Future project docs]
+│   └── p1-multi_vm_net-routing.md    Project #1 - Initial VM creation testing and simple network/routing config experimenting
 └── troubleshooting/
     └── [Issues & solutions]
 ```
