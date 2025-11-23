@@ -117,7 +117,7 @@ The case and internal components required significant cleaning due to long-term 
 The original system specifications were:
   - CPU: Intel Core i5-3570K (w/ stock cooler)
   - RAM: 8GB (4x2GB) DDR3 @ 1600MHz
-  - MoBo: ASUS P8Z77-V LX (Z77 Chipset)
+  - Motherboard: ASUS P8Z77-V LX (Z77 Chipset)
   - Storage: 240GB boot SSD (Intel), 1TB mass-storage HDD (WD)
   - GPU: NVIDEA GeForce GTX 650 Ti
   - PSU: Corsair HX750 (750W, 80+ Gold)
